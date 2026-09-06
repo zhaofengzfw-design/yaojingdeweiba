@@ -23,7 +23,8 @@ function shouldIgnore(filePath) {
   }
   const ext = path.extname(filePath).toLowerCase();
   if (IGNORE_EXT.has(ext)) return true;
-  if (filePath.startsWith('.')) return true;
+  // 允许 .github 目录，其他隐藏文件忽略
+  if (filePath.startsWith('.') && !filePath.startsWith('.github')) return true;
   return false;
 }
 
@@ -64,11 +65,21 @@ async function main() {
     count++;
     const content = fs.readFileSync(file).toString('base64');
     try {
-      await api('PUT', `${API}/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(file)}`, {
+      // 检查文件是否已存在
+      let sha = null;
+      try {
+        const existing = await api('GET', `${API}/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(file)}?ref=${BRANCH}`);
+        if (existing && existing.sha) sha = existing.sha;
+      } catch { /* 不存在，创建新文件 */ }
+
+      const body = {
         message: `init: ${file}`,
         content,
         branch: BRANCH,
-      });
+      };
+      if (sha) body.sha = sha;
+
+      await api('PUT', `${API}/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(file)}`, body);
       process.stdout.write(`\r   上传中... ${count}/${files.length}`);
     } catch (err) {
       console.log(`\n   ⚠️  ${file}: ${err.message}`);
