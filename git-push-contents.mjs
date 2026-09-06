@@ -64,11 +64,13 @@ async function main() {
   for (const file of files) {
     count++;
     const content = fs.readFileSync(file).toString('base64');
+    // 只编码路径段，保留 / 分隔符
+    const encodedPath = file.split('/').map(encodeURIComponent).join('/');
     try {
       // 检查文件是否已存在
       let sha = null;
       try {
-        const existing = await api('GET', `${API}/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(file)}?ref=${BRANCH}`);
+        const existing = await api('GET', `${API}/repos/${OWNER}/${REPO}/contents/${encodedPath}?ref=${BRANCH}`);
         if (existing && existing.sha) sha = existing.sha;
       } catch { /* 不存在，创建新文件 */ }
 
@@ -79,7 +81,7 @@ async function main() {
       };
       if (sha) body.sha = sha;
 
-      await api('PUT', `${API}/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(file)}`, body);
+      await api('PUT', `${API}/repos/${OWNER}/${REPO}/contents/${encodedPath}`, body);
       process.stdout.write(`\r   上传中... ${count}/${files.length}`);
     } catch (err) {
       console.log(`\n   ⚠️  ${file}: ${err.message}`);
