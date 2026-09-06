@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>妖精的尾巴 · 家族招募 | 冒险岛手游</title>
+  <meta name="description" content="妖精的尾巴家族招募页：席位速报、成员名录、职业分布与家族洞察，数据实时同步自飞书多维表格。" />
+  <link rel="icon" href="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cute%20cartoon%20guild%20emblem%20badge%2C%20golden%20fairy%20wings%20and%20star%2C%20orange%20gradient%20shield%2C%20glossy%20mobile%20game%20icon%2C%20centered%2C%20no%20text&image_size=square" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="nav">
+    <a class="nav-brand" href="#home">
+      <img class="nav-logo" src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cute%20cartoon%20guild%20emblem%20badge%2C%20golden%20fairy%20wings%20and%20star%2C%20orange%20gradient%20shield%2C%20glossy%20mobile%20game%20icon%2C%20centered%2C%20no%20text&image_size=square" alt="家族徽章" />
+      <span class="nav-title">妖精的尾巴<small>FAIRY TAIL</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#home">首页</a>
+      <a href="#seats">席位</a>
+      <a href="#members">成员</a>
+      <a href="#insights">洞察</a>
+      <a href="#join" class="nav-cta">入群</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-inner">
+      <span class="hero-badge"><i class="dot"></i>冒险岛手游 · 火爆招募中</span>
+      <h1 class="hero-title">妖精的尾巴</h1>
+      <p class="hero-sub">家族招募</p>
+      <p class="hero-desc" id="heroDesc">五大职业齐聚 · 冒险永不独行</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#members">查看全部成员</a>
+        <a class="btn btn-ghost" href="#join">✦ 立即加入</a>
+      </div>
+      <div class="hero-meta" id="heroMeta"></div>
+    </div>
+  </section>
+
+  <!-- 席位速报 -->
+  <section id="seats" class="section">
+    <div class="section-head">
+      <span class="section-tag">👑 席位速报</span>
+      <h2>家族席位实时播报</h2>
+      <p class="section-sub" id="syncTime"></p>
+    </div>
+    <div class="seat-cards" id="seatCards"></div>
+    <div class="seat-progress">
+      <div class="seat-progress-bar"><i id="seatBar"></i></div>
+      <div class="seat-progress-text" id="seatPercent"></div>
+    </div>
+  </section>
+
+  <!-- 入族好礼 -->
+  <section class="section section-alt">
+    <div class="section-head">
+      <span class="section-tag">🎁 家族欢迎礼</span>
+      <h2>入族好礼 三选一</h2>
+      <p class="section-sub">加入家族即可领取专属欢迎礼</p>
+    </div>
+    <div class="gift-cards" id="giftCards"></div>
+  </section>
+
+  <!-- 家族数据 -->
+  <section id="stats" class="section">
+    <div class="section-head">
+      <span class="section-tag">📊 数据概览</span>
+      <h2>家族数据一览</h2>
+      <p class="section-sub">以下统计均由多维表格数据实时计算</p>
+    </div>
+    <div class="stat-cards" id="statCards"></div>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <h3>职业分布</h3>
+        <div id="classChart" class="chart"></div>
+      </div>
+      <div class="chart-card">
+        <h3>日均在线时长分布</h3>
+        <div id="onlineChart" class="chart-bars"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 成员名录 -->
+  <section id="members" class="section section-alt">
+    <div class="section-head">
+      <span class="section-tag">🛡️ 成员名录</span>
+      <h2>冒险伙伴一览</h2>
+      <p class="section-sub">按等级排序，支持搜索与职业筛选</p>
+    </div>
+    <div class="member-toolbar">
+      <input type="search" id="memberSearch" placeholder="搜索游戏ID..." />
+      <div class="filter-chips" id="classFilter"></div>
+    </div>
+    <div class="member-groups" id="memberGroups"></div>
+  </section>
+
+  <!-- 需求洞察 -->
+  <section id="insights" class="section">
+    <div class="section-head">
+      <span class="section-tag">💡 需求洞察</span>
+      <h2>家族成员心声洞察</h2>
+      <p class="section-sub">看看大家喜欢什么样的游戏风格和家族氛围</p>
+    </div>
+    <div class="insight-grid">
+      <div class="insight-card">
+        <h3>🎮 游戏风格分布</h3>
+        <p class="insight-sub">冲级党是主流，娱乐与休闲同样重要</p>
+        <div id="styleBars"></div>
+      </div>
+      <div class="insight-card">
+        <h3>❤️ 家族需求分布</h3>
+        <p class="insight-sub">稳定团队是大家的共同心愿</p>
+        <div id="needBars"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 加入我们 -->
+  <section id="join" class="join">
+    <div class="join-inner">
+      <span class="section-tag light">💬 加入我们</span>
+      <h2>妖精的尾巴 · 虚位以待</h2>
+      <p class="join-desc">扫码加入家族YY/微信群，开启你的冒险之旅！<b id="joinCount"></b></p>
+      <div class="join-qrcode" id="joinQrcode"></div>
+      <div class="join-steps">
+        <div class="join-step"><b>1</b>扫码进群</div>
+        <div class="join-step"><b>2</b>填写入族登记表单</div>
+        <div class="join-step"><b>3</b>领取入族好礼</div>
+      </div>
+      <div class="join-perks" id="joinPerks"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>妖精的尾巴家族 · 数据来源：飞书多维表格 · <span id="footerTime"></span> 自动同步</p>
+  </footer>
+</body>
+</html>
