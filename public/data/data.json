@@ -1,0 +1,36 @@
+{
+  "updatedAt": "2026-09-06T12:00:00+08:00",
+  "config": {
+    "guildName": "妖精的尾巴",
+    "gameName": "冒险岛手游",
+    "slogan": "五大职业齐聚 · 冒险永不独行",
+    "totalSeats": 50,
+    "qrImage": "",
+    "groupInfo": "YY / 微信群",
+    "classOrder": ["战士", "飞侠", "魔法师", "弓箭手", "海盗"],
+    "giftCatalog": ["皇家美发卡", "皇家整容卷", "58万游戏币"]
+  },
+  "members": [
+    { "name": "天下第一圣骑", "class": "战士", "level": 83, "onlineTime": "1-3小时", "styles": ["高效冲级"], "needs": ["找固定队"], "gift": "皇家美发卡" },
+    { "name": "红烧手指头s", "class": "战士", "level": 80, "onlineTime": "3-6小时", "styles": ["高效冲级", "日常娱乐"], "needs": ["找固定队"], "gift": "58万游戏币" },
+    { "name": "常山赵子龙", "class": "战士", "level": 71, "onlineTime": "3-6小时", "styles": ["高效冲级"], "needs": ["打Boss"], "gift": "58万游戏币" },
+    { "name": "南侑暖树", "class": "战士", "level": 71, "onlineTime": "6-8小时", "styles": ["日常娱乐", "养老休闲"], "needs": ["开黑聊天"], "gift": "58万游戏币" },
+    { "name": "冷苏打", "class": "战士", "level": 67, "onlineTime": "1-3小时", "styles": ["日常娱乐"], "needs": ["休闲社交"], "gift": "皇家美发卡" },
+    { "name": "墨丘利", "class": "战士", "level": 60, "onlineTime": "3-6小时", "styles": ["高效冲级"], "needs": ["找固定队", "打Boss"], "gift": "58万游戏币" },
+    { "name": "老师白洁", "class": "战士", "level": 48, "onlineTime": "1-3小时", "styles": ["养老休闲"], "needs": ["带萌新"], "gift": "皇家美发卡" },
+    { "name": "画里", "class": "飞侠", "level": 75, "onlineTime": "8-12小时", "styles": ["高效冲级", "日常娱乐"], "needs": ["找固定队"], "gift": "58万游戏币" },
+    { "name": "苏殇", "class": "飞侠", "level": 74, "onlineTime": "3-6小时", "styles": ["高效冲级"], "needs": ["打Boss"], "gift": "58万游戏币" },
+    { "name": "决背对世界", "class": "飞侠", "level": 72, "onlineTime": "肝帝", "styles": ["高效冲级"], "needs": ["找固定队", "打Boss"], "gift": "58万游戏币" },
+    { "name": "狠活门探子", "class": "飞侠", "level": 60, "onlineTime": "1-3小时", "styles": ["日常娱乐"], "needs": ["开黑聊天"], "gift": "皇家美发卡" },
+    { "name": "星辰旅人", "class": "飞侠", "level": 55, "onlineTime": "3-6小时", "styles": ["日常娱乐", "养老休闲"], "needs": ["休闲社交"], "gift": "皇家整容卷" },
+    { "name": "奶盖三分甜", "class": "魔法师", "level": 78, "onlineTime": "3-6小时", "styles": ["日常娱乐"], "needs": ["找固定队"], "gift": "58万游戏币" },
+    { "name": "月光邮差", "class": "魔法师", "level": 69, "onlineTime": "6-8小时", "styles": ["高效冲级", "日常娱乐"], "needs": ["开黑聊天", "带萌新"], "gift": "皇家美发卡" },
+    { "name": "打盹的龙", "class": "魔法师", "level": 64, "onlineTime": "1-3小时", "styles": ["养老休闲"], "needs": ["休闲社交"], "gift": "58万游戏币" },
+    { "name": "柚子汽水", "class": "魔法师", "level": 52, "onlineTime": "3-6小时", "styles": ["日常娱乐"], "needs": ["带萌新"], "gift": "皇家整容卷" },
+    { "name": "皮皮虾勇士", "class": "弓箭手", "level": 76, "onlineTime": "3-6小时", "styles": ["高效冲级"], "needs": ["找固定队"], "gift": "58万游戏币" },
+    { "name": "疾风剑豪丶", "class": "弓箭手", "level": 58, "onlineTime": "1-3小时", "styles": ["日常娱乐", "养老休闲"], "needs": ["开黑聊天"], "gift": "皇家美发卡" },
+    { "name": "猫头鹰船长", "class": "海盗", "level": 81, "onlineTime": "6-8小时", "styles": ["高效冲级", "日常娱乐"], "needs": ["找固定队", "打Boss"], "gift": "58万游戏币" },
+    { "name": "枫叶红了", "class": "海盗", "level": 63, "onlineTime": "3-6小时", "styles": ["养老休闲"], "needs": ["休闲社交"], "gift": "皇家美发卡" },
+    { "name": "小小的光", "class": "魔法师", "level": 45, "onlineTime": "1-3小时", "styles": ["日常娱乐"], "needs": ["带萌新", "开黑聊天"], "gift": "58万游戏币" }
+  ]
+}
