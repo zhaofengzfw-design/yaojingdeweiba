@@ -1,0 +1,11 @@
+name = "fairy-tail-data"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# 凭证不要写在这里！用命令设置：
+#   wrangler secret put FEISHU_APP_ID
+#   wrangler secret put FEISHU_APP_SECRET
+#   wrangler secret put BITABLE_APP_TOKEN
+#   wrangler secret put BITABLE_TABLE_ID
+# 可选：入群二维码直链
+#   wrangler secret put QR_IMAGE
